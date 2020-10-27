@@ -1,13 +1,11 @@
 import React from 'react';
 import { render, cleanup } from '@testing-library/react';
-import App from './App';
+import Header from './Header';
 
-describe('App component', () => {
+describe('Header component', () => {
   afterEach(() => cleanup());
-  it('renders App', () => {
-    const { asFragment } = render(<App />);
+  it('renders Header', () => {
+    const { asFragment } = render(<Header />);
     expect(asFragment()).toMatchSnapshot();
   });
 });
-
-
