@@ -1,15 +1,15 @@
 import { useState, useEffect } from 'react';
 import { getCharacters, getCharacterById } from '../services/rickAndMorty-api';
 
-export const useCharacters = () => {
+export const useCharacters = page => {
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
   useEffect(() => {
-    getCharacters()
+    getCharacters(page)
       .then(fetchedCharacters => setCharacters(fetchedCharacters))
       .finally(() => setLoading(false));
-  }, [])
+  }, [page])
 
   return {
     loading,

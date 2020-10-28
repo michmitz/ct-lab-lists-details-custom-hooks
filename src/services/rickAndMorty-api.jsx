@@ -1,7 +1,7 @@
 const fetch = require('node-fetch');
 
-export const getCharacters = async() => {
-  const res = await fetch('https://rickandmortyapi.com/api/character');
+export const getCharacters = async(page = 1) => {
+  const res = await fetch(`https://rickandmortyapi.com/api/character?page=${page}`);
   const json = await res.json();
 
   if(!res.ok) throw 'Unable to fetch';

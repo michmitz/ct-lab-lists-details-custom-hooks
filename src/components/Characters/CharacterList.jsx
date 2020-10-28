@@ -4,8 +4,8 @@ import CharacterItem from './CharacterItem';
 import { useCharacters } from '../../hooks/characters';
 import { Link } from 'react-router-dom';
 
-const CharacterList = () => {
-  const { loading, characters } = useCharacters();
+const CharacterList = ({ page }) => {
+  const { loading, characters } = useCharacters(page);
   if(loading) return <h1>Loading...</h1>;
 
   const characterElements = characters.map(character => (
@@ -23,6 +23,8 @@ const CharacterList = () => {
   )
 };
 
-CharacterList.propTypes = {};
+CharacterList.propTypes = {
+  page: PropTypes.number
+};
 
 export default CharacterList;
