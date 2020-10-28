@@ -5,5 +5,11 @@ exports[`Header component renders Header 1`] = `
   <h1>
     Rick and Morty Characters Galore!
   </h1>
+  ;
+  <a
+    href="/"
+  >
+    Home Page
+  </a>
 </DocumentFragment>
 `;
