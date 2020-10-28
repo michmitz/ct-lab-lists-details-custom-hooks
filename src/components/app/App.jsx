@@ -6,10 +6,12 @@ import {
 } from 'react-router-dom';
 import CharacterPage from '../../pages/CharacterPage'
 import CharacterDetailPage from '../../pages/CharacterDetailPage';
+import Header from '../Header/Header'
 
 export default function App() {
   return (
     <Router>
+      <Header />
       <Switch>
         <Route exact path='/' component={CharacterPage} />
         <Route exact path='/characters/:id' component={CharacterDetailPage} />
