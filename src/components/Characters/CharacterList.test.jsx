@@ -2,6 +2,7 @@ import React from 'react';
 import { render, screen, waitFor } from '@testing-library/react';
 import CharacterList from './CharacterList';
 import { getCharacters } from '../../services/rickAndMorty-api';
+import { MemoryRouter } from 'react-router-dom';
 
 jest.mock('../../services/rickAndMorty-api.jsx')
 
@@ -11,7 +12,10 @@ describe('CharacterList component', () => {
       { id: 1, name: 'Rick', imageUrl: 'rick.png' }
     ])
     
-    render(<CharacterList />);
+    render(<MemoryRouter>
+      <CharacterList />
+      </MemoryRouter>
+    );
 
     screen.getByText('Loading...');
 
